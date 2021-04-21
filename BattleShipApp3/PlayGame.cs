@@ -23,27 +23,45 @@ namespace BattleShipApp3
 
 
 
+
+
         public string enterCoordinate()
         {
 
             Regex r = new Regex(@"[a-jA-J]+");
+            Regex w = new Regex(@"[0-9][a-zA-Z]");
             Console.WriteLine("Type a number between 0 and 9");
-            int number = Convert.ToInt32(Console.ReadLine());
+            string numberString = Console.ReadLine();
 
-            while (!betweenRange(0, 9, number))
+            for (int x = 0; x < numberString.Length; x++)
             {
-                Console.WriteLine("Make sure to type only a number between 0 and 9.");
-                number = Convert.ToInt32(Console.ReadLine());
+                while (char.IsLetter(numberString[x]) || numberString.Length > 1)
+                {
+                    Console.WriteLine("Make sure to type only a number between 0 and 9.");
+                    numberString = Console.ReadLine();
+                }
             }
+
+            int number = Convert.ToInt32(numberString);
 
             Console.WriteLine("Type a letter between 'a' and 'j'");
             string letter = Console.ReadLine();
 
-            while (!r.IsMatch(letter))
+            for(int i = 0; i < letter.Length; i++)
             {
-                Console.WriteLine("Make sure to type only a letter between 'a' and 'j'.");
-                letter = Console.ReadLine();
+                while (!char.IsLetter(letter[i]) || letter.Length > 1 || !r.IsMatch(letter))
+                {
+                    Console.WriteLine("Make sure to type only a letter between 'a' and 'j'.");
+                    letter = Console.ReadLine();
+                }
             }
+
+
+            //while (!r.IsMatch(letter))
+            //{
+            //    Console.WriteLine("Make sure to type only a letter between 'a' and 'j'.");
+            //    letter = Console.ReadLine();
+            //}
 
             string coordinate = number.ToString() + letter;
 
@@ -95,6 +113,9 @@ namespace BattleShipApp3
         {
             ComputerShip ship = new ComputerShip();
             ship.generateShipPosition();
+
+            GameGrid grid = new GameGrid();
+            grid.displayGrid();
             string[] shipPosition = ship.positions;
 
             for (int i = guessesCount.Length - 1; i >= 0; i--)

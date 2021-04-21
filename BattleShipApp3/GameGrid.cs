@@ -16,7 +16,7 @@ namespace BattleShipApp3
         string column9;
         string column10;
 
-        public void getGrid()
+        public void displayGrid()
         {
             foreach (int number in numbers)
             {

@@ -6,8 +6,8 @@ namespace BattleShipApp3
     {
         static void Main(string[] args)
         {
-            GameGrid grid = new GameGrid();
-            grid.getGrid();
+            //GameGrid grid = new GameGrid();
+            //grid.getGrid();
 
             PlayGame play = new PlayGame();
             play.play();
