@@ -6,7 +6,12 @@ namespace BattleShipApp3
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            GameGrid grid = new GameGrid();
+            grid.getGrid();
+
+            PlayGame play = new PlayGame();
+            play.play();
+
         }
     }
 }
