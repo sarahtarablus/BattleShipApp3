@@ -130,7 +130,6 @@ namespace BattleShipApp3
                 if (direction3 == 4) downDirection();
             }
 
-            Console.WriteLine(positions[0] + positions[1] + positions[2] + positions[3] + positions[4]);
         }
     }
 }

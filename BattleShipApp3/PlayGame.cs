@@ -29,7 +29,7 @@ namespace BattleShipApp3
         {
 
             Regex r = new Regex(@"[a-jA-J]+");
-            Regex w = new Regex(@"[0-9][a-zA-Z]");
+        
             Console.WriteLine("Type a number between 0 and 9");
             string numberString = Console.ReadLine();
 
@@ -55,13 +55,6 @@ namespace BattleShipApp3
                     letter = Console.ReadLine();
                 }
             }
-
-
-            //while (!r.IsMatch(letter))
-            //{
-            //    Console.WriteLine("Make sure to type only a letter between 'a' and 'j'.");
-            //    letter = Console.ReadLine();
-            //}
 
             string coordinate = number.ToString() + letter;
 
