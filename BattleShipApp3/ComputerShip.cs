@@ -1,5 +1,5 @@
 ﻿using System;
-namespace BattleShipConsoleApp
+namespace BattleShipApp3
 {
     public class ComputerShip
     {
